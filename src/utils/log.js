@@ -1,5 +1,5 @@
 const bunyan = require('bunyan')
-const defaultConfig = require('./config')()
+const defaultConfig = require('../../config')()
 
 module.exports = (config = defaultConfig) => {
   return bunyan.createLogger({

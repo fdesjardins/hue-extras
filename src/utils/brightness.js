@@ -9,7 +9,7 @@ const hue = {
 const defaultPath = '/tmp/hue:brightness'
 
 const initialState = {
-  brightness: .75,
+  brightness: 0.75,
   tempK: 3200
 }
 

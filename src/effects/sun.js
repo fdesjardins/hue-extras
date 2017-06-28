@@ -5,9 +5,9 @@ const Promise = require('bluebird')
 const execSync = require('child_process').execSync
 const moment = require('moment')
 
-const api = require('./api')()
-const config = require('./config')
-const setTempK = require('./utils').setTempK
+const api = require('../utils/api')()
+const config = require('../../config')
+const setTempK = require('../utils/utils').setTempK
 
 // SunCalc.getPosition(new Date(), 60, -150)
 const percentDayRemaining = () => {
@@ -80,19 +80,16 @@ process.on('uncaughtException', (error) => {
 
 const dayLerp = (min, max) => {
   const magnitude = Math.sin(Math.PI * (1 - percentDayRemaining() / 100))
-  console.log( magnitude )
+  console.log(magnitude)
   return lerp(min, max, magnitude)
 }
 
-Promise.all(
-  Object.keys(lamps).map(k => {
-    const lamp = lamps[k]
-    const tempK = dayLerp(lamp.min.tempK, lamp.max.tempK)
-    const brightness = dayLerp(lamp.min.brightness, lamp.max.brightness)
-    return setTempK(api, lamp.index, tempK, brightness)
-  })
-)
-.then(() => {
+Promise.all(Object.keys(lamps).map(k => {
+  const lamp = lamps[k]
+  const tempK = dayLerp(lamp.min.tempK, lamp.max.tempK)
+  const brightness = dayLerp(lamp.min.brightness, lamp.max.brightness)
+  return setTempK(api, lamp.index, tempK, brightness)
+})).then(() => {
   // console.log('%', percentDayRemaining() / 100 / 2)
   const tempK = dayLerp(2200, 6400)
   const brightness = dayLerp(.6, .9)

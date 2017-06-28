@@ -1,17 +1,13 @@
 #!/home/forrest/.nvm/versions/node/v7.7.2/bin/node
 
-const execSync = require('child_process').execSync
 const yargs = require('yargs')
 
-const timeConfigs = require('./lib/times')
-const utils = require('./lib/utils')
-const fire = require('./lib/fire')
-const brightness = require('./lib/brightness')
+const fire = require('./src/effects/fire')
+const brightness = require('./src/utils/brightness')
 
 const config = require('./config')()
-const api = require('./lib/api')()
-const argv = yargs.argv
 
+const argv = yargs.argv
 if (argv.v) {
   config.log.level = 'debug'
 }
@@ -58,7 +54,7 @@ if (cmd === 'brightness') {
  * Redshift Command
  */
 
-if (cmd == 'redshift') {
+if (cmd === 'redshift') {
   const shiftDirection = argv.d
   const wholeHouse = argv.a
   if (wholeHouse) {

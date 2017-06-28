@@ -1,6 +1,6 @@
-const api = require('./api')()
-const config = require('./config')
-const setRGB = require('./utils').setRGB
+const api = require('../utils/api')()
+const config = require('../../config')
+const setRGB = require('../utils/utils').setRGB
 
 api.lightStatusWithRGB(config.hue.lamps.computer.index)
   .then(status => {

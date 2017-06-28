@@ -1,8 +1,8 @@
 const k2rgb = require('kelvin-to-rgb')
 
-const utils = require('./utils')
-const api = require('./api')()
-const log = require('./log')()
+const utils = require('../utils/utils')
+const api = require('../utils/api')()
+const log = require('../utils/log')()
 
 const shiftDistribution = x => x < 0.5 ? 2 * x : 2 * (1 - x)
 

@@ -1,7 +1,7 @@
 const config = {
   hue: {
     host: '',
-    username: '',
+    username: ''
   },
   log: {
     name: 'hue',

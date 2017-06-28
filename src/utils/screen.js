@@ -1,7 +1,7 @@
 const screenshot = require('screenshot-desktop')
 
 const api = require('./api')()
-const config = require('./config')
+const config = require('../../config')
 const utils = require('./utils')
 
 const lamps = utils.getLamps(config, ['computer'])

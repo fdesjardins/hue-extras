@@ -1,4 +1,4 @@
-const defaultConfig = require('./config')()
+const defaultConfig = require('../../config')()
 const hue = require("node-hue-api")
 
 module.exports = (config = defaultConfig) => {

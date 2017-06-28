@@ -5,7 +5,7 @@ const hueExtras = require('./index')
 
 describe('hue-extras', () => {
   it('should exist', done => {
-    assert(nm !== undefined)
+    assert(hueExtras !== undefined)
     done()
   })
 })
