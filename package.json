@@ -1,0 +1,54 @@
+{
+  "name": "hue-extras",
+  "version": "0.0.0",
+  "description": "Philips Hue utilities",
+  "main": "index.js",
+  "repository": "fdesjardins/hue-extras",
+  "author": {
+    "name": "Forrest Desjardins",
+    "email": "desjardinsfg@gmail.com",
+    "url": "github.com/fdesjardins"
+  },
+  "engines": {
+    "node": ">=7"
+  },
+  "scripts": {
+    "test": "eslint *.js && nyc ./node_modules/.bin/mocha --opts mocha.opts test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "bunyan": "^1.8.10",
+    "desktop-screenshot": "^0.1.1",
+    "express": "^4.15.3",
+    "kelvin-to-rgb": "^1.0.2",
+    "lerp": "^1.0.3",
+    "moment": "^2.18.1",
+    "node-hue-api": "^2.4.2",
+    "screenshot-desktop": "^1.1.0",
+    "suncalc": "^1.8.0",
+    "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "eslint": "^4.1.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
